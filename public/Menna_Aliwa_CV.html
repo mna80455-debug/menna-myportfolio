@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menna Aliwa — CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --dark:    #1A0A14;
+    --rose:    #C9739A;
+    --rose-lt: #E8A0BF;
+    --lav:     #D8B4D8;
+    --mauve:   #9B6BA8;
+    --bg:      #FDF8F5;
+    --card:    #FFFFFF;
+    --gray:    #5A5A6E;
+    --muted:   #9E9EAA;
+    --border:  rgba(201,115,154,0.18);
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--dark);
+    font-size: 9.5pt;
+    line-height: 1.55;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ── PAGE WRAPPER ── */
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    background: var(--bg);
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--dark);
+    padding: 9mm 10mm 8mm;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: linear-gradient(180deg, var(--rose-lt), var(--mauve));
+  }
+  header::after {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 180px; height: 180px;
+    background: radial-gradient(circle, rgba(201,115,154,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8mm;
+  }
+
+  .name-block h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30pt;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.5px;
+    line-height: 1;
+    margin-bottom: 3px;
+  }
+  .name-block .title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9.5pt;
+    font-weight: 300;
+    color: var(--rose-lt);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .edu-badge {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(232,160,191,0.25);
+    border-radius: 8px;
+    padding: 5px 10px 6px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .edu-badge .uni { font-size: 8pt; font-weight: 500; color: var(--rose-lt); display: block; }
+  .edu-badge .deg { font-size: 7pt; color: var(--lav); display: block; margin-top: 2px; }
+
+  .contacts {
+    margin-top: 7px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+  }
+  .contacts a, .contacts span {
+    font-size: 7.5pt;
+    color: var(--lav);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .contacts a:hover { color: var(--rose-lt); }
+  .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--rose); display: inline-block; }
+
+  /* ── BODY GRID ── */
+  .body {
+    display: grid;
+    grid-template-columns: 1fr 72mm;
+    gap: 0;
+    padding: 0;
+  }
+
+  /* ── LEFT ── */
+  .left {
+    padding: 7mm 6mm 7mm 10mm;
+    border-right: 1px solid var(--border);
+  }
+
+  /* ── RIGHT ── */
+  .right {
+    padding: 7mm 8mm 7mm 6mm;
+    background: rgba(201,115,154,0.03);
+  }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 6mm; }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 6.5pt;
+    font-weight: 500;
+    color: var(--rose);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4mm;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--rose-lt), transparent);
+    opacity: 0.4;
+  }
+
+  /* ── ABOUT ── */
+  .about-text {
+    font-size: 8.5pt;
+    color: var(--gray);
+    line-height: 1.7;
+    font-weight: 300;
+    max-width: 95%;
+  }
+
+  /* ── PROJECT CARD ── */
+  .project {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 4mm 4mm 3.5mm;
+    margin-bottom: 3mm;
+    position: relative;
+    overflow: hidden;
+  }
+  .project::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 2.5px;
+    background: linear-gradient(180deg, var(--rose), var(--mauve));
+    border-radius: 2px 0 0 2px;
+  }
+
+  .proj-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+  }
+  .proj-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11.5pt;
+    font-weight: 700;
+    color: var(--dark);
+    letter-spacing: -0.2px;
+  }
+  .proj-type {
+    font-size: 6.5pt;
+    color: var(--muted);
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .proj-desc {
+    font-size: 7.5pt;
+    color: var(--gray);
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 4px;
+  }
+
+  .proj-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+  }
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 6pt;
+    background: rgba(201,115,154,0.09);
+    color: var(--mauve);
+    border: 1px solid rgba(201,115,154,0.2);
+    border-radius: 100px;
+    padding: 1px 6px;
+    white-space: nowrap;
+  }
+
+  .links {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .links a {
+    font-size: 6.5pt;
+    color: var(--rose);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(201,115,154,0.3);
+    padding-bottom: 1px;
+    white-space: nowrap;
+  }
+
+  /* ── SKILL GROUP ── */
+  .skill-group { margin-bottom: 4mm; }
+  .skill-group-name {
+    font-size: 7pt;
+    font-weight: 500;
+    color: var(--mauve);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 4px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+  }
+
+  /* ── EDUCATION ── */
+  .edu-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 4mm;
+    margin-bottom: 5mm;
+    position: relative;
+    overflow: hidden;
+  }
+  .edu-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 2.5px;
+    background: linear-gradient(180deg, var(--lav), var(--rose));
+    border-radius: 2px 0 0 2px;
+  }
+  .edu-card .uni-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11pt;
+    font-weight: 700;
+    color: var(--dark);
+    display: block;
+    margin-bottom: 2px;
+  }
+  .edu-card .degree {
+    font-size: 7.5pt;
+    color: var(--rose);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 1px;
+  }
+  .edu-card .detail {
+    font-size: 7pt;
+    color: var(--muted);
+    font-weight: 300;
+    display: block;
+  }
+
+  /* ── LANGUAGE BAR ── */
+  .lang-item { margin-bottom: 4mm; }
+  .lang-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3px;
+  }
+  .lang-name { font-size: 8pt; font-weight: 500; color: var(--dark); }
+  .lang-level { font-size: 7pt; color: var(--muted); font-weight: 300; }
+  .bar-track {
+    height: 3px;
+    background: rgba(201,115,154,0.12);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--rose-lt), var(--rose));
+  }
+
+  /* ── LINKS BLOCK ── */
+  .link-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 3.5mm;
+  }
+  .link-icon {
+    width: 16px; height: 16px;
+    background: rgba(201,115,154,0.1);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8pt;
+    flex-shrink: 0;
+  }
+  .link-row a {
+    font-size: 7.5pt;
+    color: var(--rose);
+    text-decoration: none;
+    font-weight: 400;
+    word-break: break-all;
+  }
+  .link-label {
+    font-size: 6.5pt;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    min-width: 44px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    padding: 3.5mm 10mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1.5px solid var(--rose);
+  }
+  footer span {
+    font-size: 6.5pt;
+    color: var(--lav);
+    opacity: 0.7;
+  }
+  footer .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11pt;
+    font-weight: 700;
+    color: var(--rose-lt);
+    opacity: 1;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: var(--bg); }
+    .page { width: 210mm; margin: 0; box-shadow: none; }
+    @page { size: A4; margin: 0; }
+    a { color: var(--rose) !important; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-top">
+      <div class="name-block">
+        <h1>Menna Aliwa</h1>
+        <div class="title">IT Student &nbsp;·&nbsp; Aspiring Software Developer</div>
+      </div>
+      <div class="edu-badge">
+        <span class="uni">Delta University (DTU)</span>
+        <span class="deg">Information Technology &nbsp;·&nbsp; 2nd Year</span>
+        <span class="deg">Specializing in Software — 2026</span>
+      </div>
+    </div>
+    <div class="contacts">
+      <span><span class="dot"></span> El Sharqia, Egypt</span>
+      <a href="mailto:mna80455@gmail.com"><span class="dot"></span> mna80455@gmail.com</a>
+      <a href="https://github.com/mna80455-debug" target="_blank"><span class="dot"></span> github.com/mna80455-debug</a>
+      <a href="https://www.linkedin.com/in/menna-aliwa-a6943625a" target="_blank"><span class="dot"></span> linkedin.com/in/menna-aliwa-a6943625a</a>
+    </div>
+  </header>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- LEFT COLUMN -->
+    <div class="left">
+
+      <!-- About -->
+      <div class="section">
+        <div class="section-label">About Me</div>
+        <p class="about-text">
+          Second-year IT student at Delta University with a passion for software development, 
+          system analysis, and AI-powered applications. I build smart web tools that solve real-world 
+          problems — from database-driven platforms to full-stack apps deployed on Vercel and Firebase. 
+          Proficient in leveraging AI tools (Claude, Antigravity) to accelerate development and deliver 
+          production-quality results.
+        </p>
+      </div>
+
+      <!-- Projects -->
+      <div class="section">
+        <div class="section-label">Projects</div>
+
+        <div class="project">
+          <div class="proj-header">
+            <span class="proj-name">UniRoute</span>
+            <span class="proj-type">University Transport Platform</span>
+          </div>
+          <p class="proj-desc">Mobile-first transport system for Egyptian university students — 3-app architecture (Student, Driver, Parent) with full capstone documentation: ERD, Feasibility Study, Stakeholder Interviews, System Request.</p>
+          <div class="proj-footer">
+            <div class="tags">
+              <span class="tag">React</span>
+              <span class="tag">Figma</span>
+              <span class="tag">ERD</span>
+              <span class="tag">System Design</span>
+            </div>
+            <div class="links">
+              <a href="https://uni-route.vercel.app" target="_blank">Vercel ↗</a>
+              <a href="https://github.com/mna80455-debug/UniRoute" target="_blank">GitHub ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="proj-header">
+            <span class="proj-name">Portfolio Generator</span>
+            <span class="proj-type">AI-Powered Tool</span>
+          </div>
+          <p class="proj-desc">Generates professional developer portfolios via Claude API with ATS scoring system and multiple customizable templates. Deployed and publicly accessible.</p>
+          <div class="proj-footer">
+            <div class="tags">
+              <span class="tag">Claude API</span>
+              <span class="tag">ATS Scoring</span>
+              <span class="tag">Templates</span>
+            </div>
+            <div class="links">
+              <a href="https://portfolio-generator-tau.vercel.app" target="_blank">Vercel ↗</a>
+              <a href="https://github.com/mna80455-debug/portfolio-generator" target="_blank">GitHub ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="proj-header">
+            <span class="proj-name">Invoice Generator</span>
+            <span class="proj-type">Productivity App</span>
+          </div>
+          <p class="proj-desc">Full-featured invoice management app with PDF export, multi-currency support, WhatsApp & email sharing, and Firebase-ready data architecture.</p>
+          <div class="proj-footer">
+            <div class="tags">
+              <span class="tag">PDF Export</span>
+              <span class="tag">Multi-currency</span>
+              <span class="tag">Firebase</span>
+            </div>
+            <div class="links">
+              <a href="https://invoice-generator-azure-nine.vercel.app" target="_blank">Vercel ↗</a>
+              <a href="https://github.com/mna80455-debug/invoice-generator" target="_blank">GitHub ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="proj-header">
+            <span class="proj-name">GPA Calculator</span>
+            <span class="proj-type">Academic Tool</span>
+          </div>
+          <p class="proj-desc">Clean GPA tracker supporting multiple grading systems and multi-semester management, built with React and deployed on Vercel.</p>
+          <div class="proj-footer">
+            <div class="tags">
+              <span class="tag">React</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Firebase</span>
+            </div>
+            <div class="links">
+              <a href="https://gpa-calculator-six-eosin.vercel.app" target="_blank">Vercel ↗</a>
+              <a href="https://github.com/mna80455-debug/GPA-Calculator" target="_blank">GitHub ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="proj-header">
+            <span class="proj-name">Wasl Platform</span>
+            <span class="proj-type">Web Platform</span>
+          </div>
+          <p class="proj-desc">Modern web platform built with AI-assisted development and deployed on Vercel.</p>
+          <div class="proj-footer">
+            <div class="tags">
+              <span class="tag">React</span>
+              <span class="tag">Vercel</span>
+              <span class="tag">AI-Dev</span>
+            </div>
+            <div class="links">
+              <a href="https://wasl-platform-nu.vercel.app" target="_blank">Vercel ↗</a>
+              <a href="https://github.com/mna80455-debug/wasl-platform" target="_blank">GitHub ↗</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right">
+
+      <!-- Skills -->
+      <div class="section">
+        <div class="section-label">Skills</div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Languages</div>
+          <div class="skill-tags">
+            <span class="tag">C</span>
+            <span class="tag">C++</span>
+            <span class="tag">SQL</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Tools & Version Control</div>
+          <div class="skill-tags">
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">VS Code</span>
+            <span class="tag">Vercel</span>
+            <span class="tag">Firebase</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Databases</div>
+          <div class="skill-tags">
+            <span class="tag">Oracle DB</span>
+            <span class="tag">ERD Design</span>
+            <span class="tag">Normalization</span>
+            <span class="tag">Supabase</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Core Concepts</div>
+          <div class="skill-tags">
+            <span class="tag">Data Structures</span>
+            <span class="tag">OOP</span>
+            <span class="tag">System Analysis</span>
+            <span class="tag">Problem Solving</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">AI & Modern Dev</div>
+          <div class="skill-tags">
+            <span class="tag">Prompt Engineering</span>
+            <span class="tag">Claude API</span>
+            <span class="tag">Antigravity</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Design & Planning</div>
+          <div class="skill-tags">
+            <span class="tag">Figma</span>
+            <span class="tag">Wireframing</span>
+            <span class="tag">User Flows</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="section">
+        <div class="section-label">Education</div>
+        <div class="edu-card">
+          <span class="uni-name">Delta University</span>
+          <span class="degree">B.Sc. Information Technology</span>
+          <span class="detail">Faculty of Industrial Technology & Energy</span>
+          <span class="detail">2nd Year &nbsp;·&nbsp; Expected 2027</span>
+          <span class="detail" style="margin-top:4px; color: var(--rose); font-size:7pt;">Specializing in Software Development (Year 3+)</span>
+        </div>
+      </div>
+
+      <!-- Languages -->
+      <div class="section">
+        <div class="section-label">Languages</div>
+        <div class="lang-item">
+          <div class="lang-header">
+            <span class="lang-name">Arabic</span>
+            <span class="lang-level">Native</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-header">
+            <span class="lang-name">English</span>
+            <span class="lang-level">Intermediate</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill" style="width:62%"></div></div>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="section">
+        <div class="section-label">Links</div>
+
+        <div class="link-row">
+          <span class="link-label">GitHub</span>
+          <a href="https://github.com/mna80455-debug" target="_blank">github.com/mna80455-debug</a>
+        </div>
+        <div class="link-row">
+          <span class="link-label">LinkedIn</span>
+          <a href="https://www.linkedin.com/in/menna-aliwa-a6943625a" target="_blank">linkedin.com/in/menna-aliwa</a>
+        </div>
+        <div class="link-row">
+          <span class="link-label">Email</span>
+          <a href="mailto:mna80455@gmail.com">mna80455@gmail.com</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="logo">menna.</span>
+    <span>Menna Aliwa &nbsp;·&nbsp; IT Student &nbsp;·&nbsp; El Sharqia, Egypt</span>
+    <span>2026</span>
+  </footer>
+
+</div>
+</body>
+</html>

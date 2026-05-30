@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg-primary: #0C0C0C;
+  --bg-card: #111114;
+  --text-primary: #D7E2EA;
+  --text-muted: #9E9EAA;
+  
+  --bg-secondary: #FFFFFF;
+  --text-secondary: #0C0C0C;
+  --input-bg: #F5F0F2;
+  
+  --tech-grid-color: rgba(201, 115, 154, 0.02);
+  --card-border: rgba(201, 115, 154, 0.12);
+  --body-bg: #0C0C0C;
+}
+
+html.light {
+  --bg-primary: #FDF8F5;
+  --bg-card: #FFFFFF;
+  --text-primary: #1A0A14;
+  --text-muted: #5A5A6E;
+  
+  --bg-secondary: #111114;
+  --text-secondary: #D7E2EA;
+  --input-bg: #1A1A1E;
+  
+  --tech-grid-color: rgba(12, 12, 12, 0.015);
+  --card-border: rgba(201, 115, 154, 0.18);
+  --body-bg: #FDF8F5;
+}
+
+html, body, #root {
+  background: var(--body-bg);
+  font-family: 'Outfit', sans-serif;
+  color: var(--text-primary);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* ── Theme Utility Classes ── */
+.theme-bg-primary { background-color: var(--bg-primary); transition: background-color 0.4s ease; }
+.theme-bg-card { background-color: var(--bg-card); transition: background-color 0.4s ease; }
+.theme-text-primary { color: var(--text-primary); transition: color 0.4s ease; }
+.theme-text-muted { color: var(--text-muted); transition: color 0.4s ease; }
+
+.theme-bg-secondary { background-color: var(--bg-secondary); transition: background-color 0.4s ease; }
+.theme-text-secondary { color: var(--text-secondary); transition: color 0.4s ease; }
+.theme-input-bg { background-color: var(--input-bg); transition: background-color 0.4s ease; }
+
+.theme-border-card { border-color: var(--card-border); transition: border-color 0.4s ease; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Gradient Text Utility ── */
+.hero-heading {
+  background: linear-gradient(180deg, #8A8F99 0%, #BBCCD7 50%, #D7E2EA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #C9739A, #E8A0BF, #D8B4D8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Hide Scrollbar ── */
+html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Opera */
+}
+
+/* ── Selection ── */
+::selection {
+  background: rgba(201, 115, 154, 0.3);
+  color: #fff;
+}
+
+/* ── Sleek Tech Grid Background ── */
+.tech-grid {
+  background-image: 
+    linear-gradient(to right, var(--tech-grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--tech-grid-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+}

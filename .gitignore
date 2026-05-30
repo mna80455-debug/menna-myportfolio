@@ -1,0 +1,35 @@
+# Dependency directories
+node_modules/
+
+# Production build output
+dist/
+dist-ssr/
+*.local
+
+# Vercel deployments
+.vercel
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor & System Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# TypeScript Cache
+*.tsbuildinfo
+
+# Project-specific raw/temporary files (not part of source code)
+linke webs.txt
+3صورتي D.png
+Screenshot*.png
+WhatsApp*.jpeg
+WhatsApp*.jpg
+صور في صفحه التحميل الخارجيه/
+*.txt

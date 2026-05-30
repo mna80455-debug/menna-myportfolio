@@ -1,0 +1,24 @@
+{
+  "name": "Menna Aliwa — Portfolio",
+  "short_name": "Menna Aliwa",
+  "description": "IT Student & Aspiring Software Developer - Delta University",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0C0C0C",
+  "theme_color": "#0C0C0C",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "64x64",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "64x64",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
