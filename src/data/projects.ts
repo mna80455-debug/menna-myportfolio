@@ -116,6 +116,30 @@ export const projects: Project[] = [
   },
   {
     id: 6,
+    name: 'Days (أيام)',
+    type: 'Arabic Mindfulness & Habit Tracker',
+    category: 'systems',
+    description:
+      'A peaceful Arabic journaling and mindfulness platform that tracks habits, moods, and age statistics to foster daily self-awareness.',
+    tags: ['React', 'Vercel', 'Tailwind', 'Mindfulness'],
+    images: [
+      '/images/days-1.png',
+      '/images/days-2.png',
+      '/images/days-3.png',
+      '/images/days-4.png',
+      '/images/days-5.png',
+    ],
+    liveUrl: 'https://days-app-ar.vercel.app',
+    githubUrl: 'https://github.com/mna80455-debug/days',
+    features: [
+      'Daily journaling and mood tracking with visual emotion trends over time.',
+      'Yearly progression calculations and custom birthday count-down timers.',
+      'A "Life in Weeks" calendar representation mapping weeks lived and lifetime progress.',
+      'Subtle breathing and mindfulness guides designed to cultivate daily awareness.',
+    ],
+  },
+  {
+    id: 7,
     name: 'BookFlow',
     type: 'Reading Tracker',
     category: 'academic',
