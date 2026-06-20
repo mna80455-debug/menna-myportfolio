@@ -140,6 +140,29 @@ export const projects: Project[] = [
   },
   {
     id: 7,
+    name: 'QR for You',
+    type: 'Advanced QR Code Customizer',
+    category: 'systems',
+    description:
+      'A feature-rich QR code generator and customizer with custom logos, gradient fills, templates, and scan readability verification.',
+    tags: ['React', 'Vercel', 'Tailwind', 'Canvas API'],
+    images: [
+      '/images/qr-1.png',
+      '/images/qr-2.png',
+      '/images/qr-3.png',
+      '/images/qr-4.png',
+    ],
+    liveUrl: 'https://qr-for-you.vercel.app',
+    githubUrl: 'https://github.com/mna80455-debug/qr-for-you',
+    features: [
+      'Generate QR codes for multiple categories (Web links, WhatsApp, Telegram, files, contacts).',
+      'Complete color customization supporting solid fills, linear gradients, and radial gradients.',
+      'Central logo overlays with custom sizing, background masking, and custom frames/CTA tags.',
+      'Smart scan readability analyzer (Scans Score) giving real-time feedback on color contrast and logo sizes.',
+    ],
+  },
+  {
+    id: 8,
     name: 'BookFlow',
     type: 'Reading Tracker',
     category: 'academic',

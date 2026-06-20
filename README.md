@@ -67,9 +67,10 @@ A collection of applications integrated and showcased within this portfolio:
 1. **UniRoute** — Transport Platform for Egyptian university students. [Live Link](https://uni-route.vercel.app/)
 2. **Wasl Platform** — Training & Employment portal. [Live Link](https://wasl-platform-nu.vercel.app/)
 3. **Days (أيام)** — Arabic mindfulness and habit tracking dashboard. [Live Link](https://days-app-ar.vercel.app/)
-4. **Portfolio Generator** — AI-powered developer landing page generator. [Live Link](https://portfolio-generator-tau.vercel.app/)
-5. **InvoiceCraft** — PDF-capable invoice builder. [Live Link](https://invoice-generator-azure-nine.vercel.app/)
-6. **GradeIQ** — Academic simulator & GPA tracker. [Live Link](https://gpa-calculator-six-eosin.vercel.app/)
+4. **QR for You** — Advanced custom QR code generator with Canvas customizer. [Live Link](https://qr-for-you.vercel.app/)
+5. **Portfolio Generator** — AI-powered developer landing page generator. [Live Link](https://portfolio-generator-tau.vercel.app/)
+6. **InvoiceCraft** — PDF-capable invoice builder. [Live Link](https://invoice-generator-azure-nine.vercel.app/)
+7. **GradeIQ** — Academic simulator & GPA tracker. [Live Link](https://gpa-calculator-six-eosin.vercel.app/)
 
 ---
 
