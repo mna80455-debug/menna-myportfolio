@@ -89,7 +89,7 @@ export default function HeroSection({ theme, toggleTheme }: HeroSectionProps) {
 
             {/* Download CV */}
             <a
-              href="/Menna_Aliwa_CV.html"
+              href="/Menna_Aliwa_CV.pdf"
               download
               onClick={handleLinkClick}
               onMouseEnter={playHoverSound}
